@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Date;
+
+class SaveRouteRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     */
+    public function rules(): array
+    {
+        return [
+            "external_id" =>  ['required', 'string'],
+            "invitation_code" =>  ['required', 'string', 'min:6', 'max:6'],
+            "title" =>  ['required', 'string'],
+            "start_timestamp" =>  ['required', 'date', 'before_or_equal:end_timestamp', 'after_or_equal:' . Date::now()->format('Y-m-d H:i:s')],
+            "end_timestamp" =>  ['required', 'date', 'after_or_equal:start_timestamp', 'after_or_equal:' . Date::now()->format('Y-m-d H:i:s')],
+        ];
+    }
+}
