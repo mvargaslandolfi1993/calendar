@@ -1,0 +1,1048 @@
+{
+	"info": {
+		"_postman_id": "a11ae2a1-d051-4033-b681-effc6529cac7",
+		"name": "Calendar API Evaluation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11697131"
+	},
+	"item": [
+		{
+			"name": "Calendar",
+			"item": [
+				{
+					"name": "Get Calendars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/calendars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"calendars"
+							],
+							"query": [
+								{
+									"key": "day",
+									"value": "2020-01-20",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Calendar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/calendars/{{calendar_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"calendars",
+								"{{calendar_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Calendar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"My new calendar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/calendars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"calendars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Calendar",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Update Calendar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/calendars/{{calendar_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"calendars",
+								"{{calendar_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Calendar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/calendars/{{calendar_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"calendars",
+								"{{calendar_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Calendar Days Availability",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"calendar_id\": 3,\r\n    \"day\": \"2023-05-28\",\r\n    \"enabled\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/calendars/calendar-day-disabled/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"calendars",
+								"calendar-day-disabled",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Calendar Days Availability",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"calendar_id\": 8,\r\n    \"day\": \"2023-05-28\",\r\n    \"enabled\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/calendars/calendar-day-disabled/{{calendar_day_availability_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"calendars",
+								"calendar-day-disabled",
+								"{{calendar_day_availability_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Routes",
+			"item": [
+				{
+					"name": "Get Routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/routes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"routes"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Route",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/routes/{{route_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"routes",
+								"{{route_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Route",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"external_id\": \"232\",\r\n    \"invitation_code\": \"22XC11\",\r\n    \"title\": \"Guayaquil - Quito\",\r\n    \"start_timestamp\": \"2023-05-26 10:00:00\",\r\n    \"end_timestamp\": \"2023-05-26 12:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/routes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Route",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"external_id\": \"233\",\r\n    \"invitation_code\": \"22XC12\",\r\n    \"title\": \"Guayaquil -22XC12 - Quito\",\r\n    \"start_timestamp\": \"2023-05-27 10:10:00\",\r\n    \"end_timestamp\": \"2023-05-27 12:10:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/routes/{{route_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"routes",
+								"{{route_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Route",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/routes/{{route_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"routes",
+								"{{route_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Get Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"services"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/services/{{service_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"services",
+								"{{service_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Service",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"external_id\": \"-26257972\",\r\n    \"external_budget_id\": \"-54\",\r\n    \"external_route_id\": \"-54\",\r\n    \"name\": \"EL BARQUITO 1\",\r\n    \"timestamp\": \"2021-09-15 00:00:00\",\r\n    \"arrival_address\": \"Av. Meridiana C. Mallorca (sortida ciutat),Avinguda Meridiana 178, Barcelona\",\r\n    \"arrival_timestamp\": \"2021-09-15 18:42:28\",\r\n    \"departure_address\": \"Camí de Can Ruti, 08916 Canyet, España\",\r\n    \"departure_timestamp\": \"2021-09-15 18:00:28\",\r\n    \"capacity\": 10,\r\n    \"status\": -40,\r\n    \"status_info\": {\r\n        \"driver\": false,\r\n        \"vehicle\": false,\r\n        \"readings\": false,\r\n        \"tracking\": false,\r\n        \"ended_late\": false,\r\n        \"play_service\": false,\r\n        \"started_late\": false,\r\n        \"stop_service\": false\r\n    },\r\n    \"reprocess_status\" : 0,\r\n    \"return\" : 0,\r\n    \"province_id\": 8,\r\n    \"itinerary_drivers\": \"Camí de Can Ruti, 08916 Canyet, España -- Av. Meridiana / C. Mallorca (sortida ciutat),Avinguda Meridiana 178, BarcelonanTransfer sólo idann20/01/2020 - 18:00:28 - Parada 1 -- Camí de Can Ruti, 08916 Canyet, Españan20/01/2020 - 18:21:28 - Parada 2 -- Av. Meridiana / Pg. Fabra i Puig (Forn de Pa - creuat el passeig),Avinguda Meridiana 387n20/01/2020 - 18:29:28 - Parada 3 -- Av. Meridiana (bocana Metro Sagrera),Avinguda Meridiana 288, Barcelonan20/01/2020 - 18:42:28 - Parada 4 -- Av. Meridiana / C. Mallorca (sortida ciutat),Avinguda Meridiana 178, Barcelona\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Service",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"external_id\": \"-26257972\",\r\n    \"external_budget_id\": \"-54\",\r\n    \"external_route_id\": \"-54\",\r\n    \"name\": \"EL BARQUITO 1\",\r\n    \"timestamp\": \"2021-09-15 00:00:00\",\r\n    \"arrival_address\": \"Av. Meridiana C. Mallorca (sortida ciutat),Avinguda Meridiana 178, Barcelona\",\r\n    \"arrival_timestamp\": \"2021-09-15 18:42:28\",\r\n    \"departure_address\": \"Camí de Can Ruti, 08916 Canyet, España\",\r\n    \"departure_timestamp\": \"2021-09-15 18:00:28\",\r\n    \"capacity\": 10,\r\n    \"status\": -40,\r\n    \"status_info\": {\r\n        \"driver\": false,\r\n        \"vehicle\": false,\r\n        \"readings\": false,\r\n        \"tracking\": false,\r\n        \"ended_late\": false,\r\n        \"play_service\": false,\r\n        \"started_late\": false,\r\n        \"stop_service\": false\r\n    },\r\n    \"reprocess_status\" : 0,\r\n    \"return\" : 0,\r\n    \"province_id\": 9,\r\n    \"itinerary_drivers\": \"Camí de Can Ruti, 08916 Canyet, España -- Av. Meridiana / C. Mallorca (sortida ciutat),Avinguda Meridiana 178, BarcelonanTransfer sólo idann20/01/2020 - 18:00:28 - Parada 1 -- Camí de Can Ruti, 08916 Canyet, Españan20/01/2020 - 18:21:28 - Parada 2 -- Av. Meridiana / Pg. Fabra i Puig (Forn de Pa - creuat el passeig),Avinguda Meridiana 387n20/01/2020 - 18:29:28 - Parada 3 -- Av. Meridiana (bocana Metro Sagrera),Avinguda Meridiana 288, Barcelonan20/01/2020 - 18:42:28 - Parada 4 -- Av. Meridiana / C. Mallorca (sortida ciutat),Avinguda Meridiana 178, Barcelona\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/services/{{service_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"services",
+								"{{service_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Route",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/services/{{service_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"services",
+								"{{service_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Routes Data",
+			"item": [
+				{
+					"name": "Get Routes Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/route-frequency",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"route-frequency"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Route Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/route-frequency/{{route_frequency_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"route-frequency",
+								"{{route_frequency_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Route Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"route_id\": 91,\r\n    \"calendar_id\": 4,\r\n    \"route_circular\": 0,\r\n    \"date_init\": \"2023-05-26 10:00:00\",\r\n    \"date_finish\": \"2023-05-26 12:00:00\",\r\n    \"mon\": 1,\r\n    \"tue\": 1,\r\n    \"wed\": 1,\r\n    \"thu\": 1,\r\n    \"fri\": 1,\r\n    \"sat\": 0,\r\n    \"sun\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/route-frequency",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"route-frequency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Route Data",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"route_id\": 33,\r\n    \"calendar_id\": 2,\r\n    \"route_circular\": 0,\r\n    \"date_init\": \"2023-05-26 10:00:00\",\r\n    \"date_finish\": \"2023-05-26 12:00:00\",\r\n    \"mon\": 0,\r\n    \"tue\": 1,\r\n    \"wed\": 1,\r\n    \"thu\": 1,\r\n    \"fri\": 1,\r\n    \"sat\": 0,\r\n    \"sun\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/route-frequency/{{route_frequency_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"route-frequency",
+								"{{route_frequency_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Route Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/route-frequency/{{route_frequency_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"route-frequency",
+								"{{route_frequency_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservations",
+			"item": [
+				{
+					"name": "Get Reservations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"reservations"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reservation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/reservations/{{reservation_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"reservations",
+								"{{reservation_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Reservation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_plan_id\": 52,\r\n    \"route_id\": 91,\r\n    \"reservation_start\": \"2023-05-26 10:00:00\",\r\n    \"reservation_end\": \"2023-05-26 12:00:00\",\r\n    \"route_stop_origin_id\": 1,\r\n    \"route_stop_destination_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Reservation",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_plan_id\": 52,\r\n    \"route_id\": 33,\r\n    \"reservation_start\": \"2023-05-26 10:00:00\",\r\n    \"reservation_end\": \"2023-05-26 12:00:00\",\r\n    \"route_stop_origin_id\": 2,\r\n    \"route_stop_destination_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/reservations/{{reservation_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"reservations",
+								"{{reservation_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Reservation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/reservations/{{reservation_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"reservations",
+								"{{reservation_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/users/{{user_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Miguel\",\r\n    \"last_name\": \"Vargas\",\r\n    \"phone_number\": \"+593983808857\",\r\n    \"email\": \"miguel.vargas.vzla1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Miguel Angel\",\r\n    \"last_name\": \"Vargas\",\r\n    \"phone_number\": \"+593983808857\",\r\n    \"email\": \"miguel.vargas.vzla1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/users/{{user_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/users/{{user_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users Plans",
+			"item": [
+				{
+					"name": "Create or Update User Plan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"currency_id\": 1,\r\n    \"renewal_price\": 70,\r\n    \"requires_invoice\": 0,\r\n    \"status\": 1,\r\n    \"financiation\": 0,\r\n    \"language\": \"ca_ES\",\r\n    \"company_id\": 1,\r\n    \"nif\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/user-plan/{{user_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user-plan",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Availability Service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/availability?range=2020-05-13/2023-05-20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"availability"
+					],
+					"query": [
+						{
+							"key": "day",
+							"value": "2021-05-13",
+							"disabled": true
+						},
+						{
+							"key": "range",
+							"value": "2020-05-13/2023-05-20"
+						},
+						{
+							"key": "route_id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "user_id",
+			"value": "1"
+		},
+		{
+			"key": "reservation_id",
+			"value": "213"
+		},
+		{
+			"key": "route_frequency_id",
+			"value": "2"
+		},
+		{
+			"key": "route_id",
+			"value": "10"
+		},
+		{
+			"key": "calendar_id",
+			"value": "2"
+		},
+		{
+			"key": "calendar_day_availability_id",
+			"value": "2363"
+		},
+		{
+			"key": "service_id",
+			"value": "26257972"
+		}
+	]
+}
