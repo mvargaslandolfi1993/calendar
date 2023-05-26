@@ -985,7 +985,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost/api/availability?range=2020-05-13/2023-05-20",
+					"raw": "http://localhost/api/availability?route_id=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -997,17 +997,17 @@
 					"query": [
 						{
 							"key": "day",
-							"value": "2021-05-13",
+							"value": "2020-01-20",
 							"disabled": true
 						},
 						{
 							"key": "range",
-							"value": "2020-05-13/2023-05-20"
+							"value": "2020-12-24/2023-05-27",
+							"disabled": true
 						},
 						{
 							"key": "route_id",
-							"value": "1",
-							"disabled": true
+							"value": "1"
 						}
 					]
 				}
